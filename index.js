@@ -21,7 +21,7 @@ for (let i = 0; i < stringArray.length; i++) {
 // Peform some calculations on the numbers.
 console.log(numbers);
 console.log(`You have given ${getLength(numbers)} numbers.`);
-console.log(`The sum of your numbers is ${getSum(numbers)}.`);
+console.log(`The getSum of your numbers is ${getSum(numbers)}.`);
 console.log(`The mean of your numbers is ${getMean(numbers)}.`);
 console.log(`The smallest of your numbers is ${getMin(numbers)}.`);
 console.log(`The largest of your numbers is ${getMax(numbers)}.`);
@@ -39,14 +39,17 @@ console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
 function getLength(numbers) {
   // TODO
 }
-
+return numbers.length;
 /**
  * @param {number[]} numbers an array of integers
- * @returns {number} the sum of the numbers
+ * @returns {number} the getSum of the numbers
  */
 function getSum(numbers) {
   // TODO
 }
+let getSum = 0;
+for (const n of numbers) getSum += n;
+return getSum;
 
 /**
  * @param {number[]} numbers an array of integers
@@ -55,6 +58,9 @@ function getSum(numbers) {
 function getMean(numbers) {
   // TODO
 }
+let getSum = 0;
+const getSum = getSum(numbers);
+return getSum / numbers.length;
 
 /**
  * @param {number[]} numbers an array of integers
@@ -63,6 +69,12 @@ function getMean(numbers) {
 function getMin(numbers) {
   // TODO
 }
+let min = Infinity;
+for (const n of numbers)
+  if (n < min) {
+    min = n;
+  }
+return min;
 
 /**
  * @param {number[]} numbers an array of integers
@@ -71,13 +83,19 @@ function getMin(numbers) {
 function getMax(numbers) {
   // TODO
 }
+let max = -Infinity;
+for (const n of numbers)
+  if (n > max) {
+    max = n;
+  }
+return max;
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  return getMax(numbers) - getMin(numbers);
 }
 
 /**
@@ -86,6 +104,14 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
   // TODO
+  const output = [];
+  for (const n of numbers) {
+    if (n % 2 === 0);
+    {
+      output.push(n);
+      return output;
+    }
+  }
 }
 
 /**
@@ -94,4 +120,13 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
   // TODO
+
+  const output = [];
+  for (const n of numbers) {
+    {
+      if (n % 2 === 1);
+      output.push(n);
+      return output;
+    }
+  }
 }
